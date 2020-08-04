@@ -1,10 +1,14 @@
 import React from 'react';
-import Button from "@material-ui/core/Button";
+import Button from '@material-ui/core/Button';
 
-export default ({configItem}) => {
-    return (
-        <Button variant="contained" color="primary" href="#contained-buttons">
-            {configItem.title}
-        </Button>
-    )
-}
+export default ({configItem, isSubmitting}) => {
+  return (
+    <Button
+      variant="contained"
+      color="primary"
+      type="submit"
+      disabled={isSubmitting}>
+      {configItem.title}
+    </Button>
+  );
+};
