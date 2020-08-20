@@ -1,12 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FormPage from "./pages/FormPage";
+import FormPage from './pages/FormPage';
+import DragAndDrop from './pages/DragAndDrop';
 
 function App() {
-  return (
-    <FormPage />
-  );
+  return <DragAndDrop />;
 }
 
 export default App;

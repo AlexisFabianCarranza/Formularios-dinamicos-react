@@ -8,7 +8,7 @@ export default ({configItem, handleChange, handleBlur, values}) => {
       type={configItem.type}
       onChange={handleChange}
       onBlur={handleBlur}
-      value={values[configItem.id]}
+      value={values ? values[configItem.id] : ''}
       name={configItem.id}
     />
   );

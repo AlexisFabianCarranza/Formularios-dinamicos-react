@@ -11,6 +11,7 @@
     "formik": "^2.1.5",
     "js-yaml": "^3.14.0",
     "react": "^16.13.1",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
