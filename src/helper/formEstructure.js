@@ -54,6 +54,29 @@ export default [
                         },
                         {
                             value: "PROD",
+                            label: "Producción"
+                        },
+                        {
+                            value: "STG",
+                            label: "STG"
+                        }
+                    ]
+                },
+            },
+            {
+                type: 'Select',
+                componentType: 'Select',
+                configItem: {
+                    label: 'En que entorno desea publicar con select?',
+                    id: 'testSelect',
+                    initialState: 'PROD',
+                    values: [
+                        {
+                            value: "TST",
+                            label: "Testing"
+                        },
+                        {
+                            value: "PROD",
                             label: "Produccion"
                         },
                         {

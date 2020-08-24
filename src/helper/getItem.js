@@ -3,6 +3,7 @@ import TextInput from '../formComponents/TextInput';
 import Button from '../formComponents/Button';
 import Checkbox from '../formComponents/Checkbox';
 import Radio from '../formComponents/Radio';
+import Select from '../formComponents/Select';
 
 export default (
   componentInfo,
@@ -39,6 +40,14 @@ export default (
     case 'Radio':
       return (
           <Radio
+              configItem={componentInfo.configItem}
+              handleChange={handleChange}
+              values={values}
+          />
+      );
+    case 'Select':
+      return (
+          <Select
               configItem={componentInfo.configItem}
               handleChange={handleChange}
               values={values}

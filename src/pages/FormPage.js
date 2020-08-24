@@ -12,7 +12,7 @@ export default () => {
     const makeInitialState = () => {
         let initalState = {};
         for (let i = 0; i < formEstructure[0].components.length; i++) {
-            if (['Input', 'Checkbox', 'Radio'].indexOf(formEstructure[0].components[i].componentType) !== -1) {
+            if (['Input', 'Checkbox', 'Radio', 'Select'].indexOf(formEstructure[0].components[i].componentType) !== -1) {
                 initalState[formEstructure[0].components[i].configItem.id] =
                     formEstructure[0].components[i].configItem.initialState;
             }
