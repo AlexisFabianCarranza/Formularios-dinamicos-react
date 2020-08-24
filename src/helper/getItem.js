@@ -1,6 +1,8 @@
 import React from 'react';
 import TextInput from '../formComponents/TextInput';
 import Button from '../formComponents/Button';
+import Checkbox from '../formComponents/Checkbox';
+import Radio from '../formComponents/Radio';
 
 export default (
   componentInfo,
@@ -19,12 +21,28 @@ export default (
       );
     case 'TextInput':
       return (
-        <TextInput
-          configItem={componentInfo.configItem}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-          values={values}
-        />
+          <TextInput
+              configItem={componentInfo.configItem}
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              values={values}
+          />
+      );
+    case 'Checkbox':
+      return (
+          <Checkbox
+              configItem={componentInfo.configItem}
+              handleChange={handleChange}
+              values={values}
+          />
+      );
+    case 'Radio':
+      return (
+          <Radio
+              configItem={componentInfo.configItem}
+              handleChange={handleChange}
+              values={values}
+          />
       );
   }
 };
