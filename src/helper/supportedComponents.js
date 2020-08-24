@@ -18,4 +18,12 @@ export default [
       action: 'NextTab',
     },
   },
+  {
+    type: 'Text',
+    id: 'text',
+    componentType: 'Title',
+    configItem: {
+      text: 'Title',
+    },
+  },
 ];

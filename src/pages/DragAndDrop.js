@@ -89,13 +89,6 @@ function DragAndDrop() {
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={() => {
-          setState([...state, []]);
-        }}>
-        Add new group
-      </button>
       <div style={{display: 'flex'}}>
         <DragDropContext onDragEnd={onDragEnd}>
           {state.map((el, ind) => (

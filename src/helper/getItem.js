@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from '../formComponents/TextInput';
 import Button from '../formComponents/Button';
+import Text from '../formComponents/Text';
 
 export default (
   componentInfo,
@@ -20,6 +21,15 @@ export default (
     case 'TextInput':
       return (
         <TextInput
+          configItem={componentInfo.configItem}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          values={values}
+        />
+      );
+    case 'Text':
+      return (
+        <Text
           configItem={componentInfo.configItem}
           handleChange={handleChange}
           handleBlur={handleBlur}
