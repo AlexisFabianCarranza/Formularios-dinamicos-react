@@ -10,6 +10,7 @@ export default [
                     id: 'email',
                     initialState: '',
                 },
+
             },
             {
                 type: 'TextInput',
@@ -69,7 +70,7 @@ export default [
                 configItem: {
                     label: 'En que entorno desea publicar con select?',
                     id: 'testSelect',
-                    initialState: 'PROD',
+                    initialState: '',
                     values: [
                         {
                             value: "TST",
@@ -83,6 +84,63 @@ export default [
                             value: "STG",
                             label: "STG"
                         }
+                    ]
+                },
+            },
+            {
+                type: 'SelectDependiente',
+                componentType: 'Select',
+                configItem: {
+                    label: 'En que server desea publicar?',
+                    id: 'testSelect2',
+                    initialState: '',
+                    elementoPadre: 'testSelect',
+                    values: [
+                        {
+                            value: "TST-1",
+                            label: "TST-1",
+                            req: "TST"
+                        },
+                        {
+                            value: "TST-2",
+                            label: "TST-2",
+                            req: "TST"
+                        },
+                        {
+                            value: "TST-3",
+                            label: "TST-3",
+                            req: "TST"
+                        },
+                        {
+                            value: "PROD-1",
+                            label: "produccion bs as-1",
+                            req: "PROD"
+                        },
+                        {
+                            value: "PROD-2",
+                            label: "Produccion Santa fe-2",
+                            req: "PROD"
+                        },
+                        {
+                            value: "PROD-3",
+                            label: "Produccion cordoba -3",
+                            req: "PROD"
+                        },
+                        {
+                            value: "STG-1",
+                            label: "STG-1",
+                            req: "STG"
+                        },
+                        {
+                            value: "STG-2",
+                            label: "STG-2",
+                            req: "STG"
+                        },
+                        {
+                            value: "STG-3",
+                            label: "STG-3",
+                            req: "STG"
+                        },
                     ]
                 },
             },
