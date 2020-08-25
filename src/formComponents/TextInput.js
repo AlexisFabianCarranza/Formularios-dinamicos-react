@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
-export default ({configItem, handleChange, handleBlur, values}) => {
+export default ({configItem, handleChange, handleBlur, values, error}) => {
   return (
     <TextField
       label={configItem.label}
@@ -10,6 +10,7 @@ export default ({configItem, handleChange, handleBlur, values}) => {
       onBlur={handleBlur}
       value={values[configItem.id]}
       name={configItem.id}
+      error={error}
     />
   );
 };

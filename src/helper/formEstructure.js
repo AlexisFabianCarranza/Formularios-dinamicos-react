@@ -8,7 +8,7 @@ export default [
                 configItem: {
                     label: 'Esto es un label normal',
                     id: 'email',
-                    initialState: '',
+                    initialState: ''
                 },
 
             },
@@ -19,7 +19,8 @@ export default [
                     label: 'Number',
                     type: 'number',
                     id: 'numero',
-                    initialState: '',
+                    initialState: ''
+
                 },
             },
             {
@@ -29,7 +30,31 @@ export default [
                     label: 'Password',
                     type: 'password',
                     id: 'password',
-                    initialState: 'asd',
+                    initialState: '',
+                    validator: {
+                        type: "string",
+                        configs: [
+                            {
+                                type: "min",
+                                props: [
+                                    8,
+                                    "La contraseña necesita ser de al menos 8 caracteres"
+                                ]
+                            },{
+                                type: "max",
+                                props: [
+                                    12,
+                                    "La contraseña es muy grande! maximo 12 caracteres"
+                                ]
+                            },{
+                                type: "required",
+                                props: [
+                                    'Es necesario que usted inserte una contraseña'
+                                ]
+                            }
+
+                        ]
+                    }
                 },
             },
             {

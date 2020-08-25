@@ -5,6 +5,7 @@ import yml from 'js-yaml';
 import formEstructure from '../helper/formEstructure';
 import getItem from '../helper/getItem';
 import Appbar from '../components/Appbar';
+import * as Yup from 'yup';
 
 export default () => {
     const classes = useStyles();
@@ -20,28 +21,52 @@ export default () => {
         return initalState;
     };
 
-    const renderComponents = (handleChange, values, handleBlur, isSubmitting, props) => {
+    const renderComponents = (handleChange, values, handleBlur, isSubmitting, props, errors, touched) => {
         const components = [];
         for (let i = 0; i < formEstructure[0].components.length; i++) {
             components.push(
-                getItem(
-                    formEstructure[0].components[i],
-                    handleChange,
-                    values,
-                    handleBlur,
-                    isSubmitting,
-                ),
+                <>
+                    {getItem(
+                        formEstructure[0].components[i],
+                        handleChange,
+                        values,
+                        handleBlur,
+                        isSubmitting,
+                        errors,
+                        touched
+                    )}
+                    {errors[formEstructure[0].components[i].configItem.id] && touched[formEstructure[0].components[i].configItem.id] ? (
+                        <div>{errors[formEstructure[0].components[i].configItem.id]}</div>
+                    ) : null}
+                </>
             );
         }
         return [components];
     };
 
+    const validationSchema = (() => {
+        let estructura = {};
+
+        //itero cada componente a ver si tiene validadores
+        formEstructure[0].components.forEach((componente) => {
+            if (componente.configItem.hasOwnProperty("validator")) {
+                estructura[componente.configItem.id] = Yup[componente.configItem.validator.type]()
+
+                //itero cada configuracion de ese validador
+                componente.configItem.validator.configs.forEach(config => {
+                    estructura[componente.configItem.id] = estructura[componente.configItem.id][config.type](...config.props)
+                })
+            }
+        });
+        return Yup.object().shape(estructura);
+    })();
     return (
         <div>
             <Appbar/>
             <div className={classes.containerForm}>
                 <Formik
                     initialValues={makeInitialState()}
+                    validationSchema={validationSchema}
                     onSubmit={async (values) => {
                         await new Promise((resolve) => setTimeout(resolve, 500));
                         alert(JSON.stringify(values, null, 2));
@@ -52,6 +77,8 @@ export default () => {
                     {(props) => {
                         const {
                             values,
+                            errors,
+                            touched,
                             isSubmitting,
                             handleChange,
                             handleBlur,
@@ -65,7 +92,9 @@ export default () => {
                                     values,
                                     handleBlur,
                                     isSubmitting,
-                                    props
+                                    props,
+                                    errors,
+                                    touched
                                 )}
                             </form>
                         );

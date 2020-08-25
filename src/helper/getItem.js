@@ -13,6 +13,8 @@ export default (
   values,
   handleBlur,
   isSubmitting,
+  errors,
+  touched
 ) => {
   switch (componentInfo.type) {
     case 'Button':
@@ -29,6 +31,7 @@ export default (
               handleChange={handleChange}
               handleBlur={handleBlur}
               values={values}
+              error={errors[componentInfo.configItem.id] && touched[componentInfo.configItem.id]}
           />
       );
     case 'Checkbox':
