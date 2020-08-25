@@ -5,6 +5,7 @@ import Checkbox from '../formComponents/Checkbox';
 import Radio from '../formComponents/Radio';
 import Select from '../formComponents/Select';
 import SelectDependiente from '../formComponents/SelectDependiente';
+import Switch from "../formComponents/Switch";
 
 export default (
   componentInfo,
@@ -57,6 +58,14 @@ export default (
     case 'SelectDependiente':
       return (
           <SelectDependiente
+              configItem={componentInfo.configItem}
+              handleChange={handleChange}
+              values={values}
+          />
+      );
+    case 'Switch':
+      return (
+          <Switch
               configItem={componentInfo.configItem}
               handleChange={handleChange}
               values={values}

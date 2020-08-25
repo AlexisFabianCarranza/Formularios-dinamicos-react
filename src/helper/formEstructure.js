@@ -145,6 +145,15 @@ export default [
                 },
             },
             {
+                type: 'Switch',
+                componentType: 'Switch',
+                configItem: {
+                    label: 'Esto es un Switch',
+                    id: 'testSwitch',
+                    initialState: false,
+                },
+            },
+            {
                 type: 'Button',
                 componentType: 'Action',
                 configItem: {
