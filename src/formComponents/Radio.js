@@ -5,7 +5,6 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
 
 export default ({configItem, handleChange, values}) => {
-    console.log(values)
     return (
         <>
             <FormLabel component="legend">{configItem.label}</FormLabel>

@@ -5,7 +5,6 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
 export default ({configItem, handleChange, values}) => {
-    console.log(values)
     return (
         <>
             <InputLabel id={configItem.id}>{configItem.label}</InputLabel>
