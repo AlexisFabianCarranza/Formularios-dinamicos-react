@@ -5,8 +5,13 @@ export default [
     componentType: 'Input',
     configItem: {
       label: 'TextInput',
-      id: 'prueba',
+      id: '',
       initialState: '',
+    },
+    previewInfo: {
+      icon: 'text_fields',
+      title: 'Text field',
+      description: 'Single line text field',
     },
   },
   {
@@ -17,6 +22,11 @@ export default [
       title: 'Button',
       action: 'NextTab',
     },
+    previewInfo: {
+      icon: 'smart_button',
+      title: 'Button',
+      description: 'Embed custom behaviour',
+    },
   },
   {
     type: 'Text',
@@ -24,6 +34,11 @@ export default [
     componentType: 'Title',
     configItem: {
       text: 'Title',
+    },
+    previewInfo: {
+      icon: 'spellcheck',
+      title: 'Title',
+      description: 'Form title',
     },
   },
 ];

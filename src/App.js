@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import FormPage from './pages/FormPage';
-import DragAndDrop from './pages/DragAndDrop';
+import DragAndDrop from './DragAndDrop/DragAndDrop';
 
 function App() {
   return <DragAndDrop />;

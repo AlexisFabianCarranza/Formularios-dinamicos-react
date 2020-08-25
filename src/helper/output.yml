@@ -1,0 +1,72 @@
+manageiq:
+  X_MIQ_Group: EvmTecoPMSGroup
+  api_token: 51511ac6e8862765e87f0c145bcf29a0
+  api_url: 'https://10.249.60.228'
+  group: groups/1000000000002
+  request: requests/1000000001059
+  request_task: requests/1000000001059/request_tasks/1000000001059
+  service: services/1000000000720
+  user: users/1000000000009
+manageiq_connection:
+  X_MIQ_Group: EvmTecoPMSGroup
+  token: 51511ac6e8862765e87f0c145bcf29a0
+  url: 'https://10.249.60.228'
+rq:
+  contact:
+    email: GFVillalba@teco.com.ar
+    id: u200497
+    name: Gabriel Villalba
+  id: '1000000001059'
+  vms:
+    '0':
+      agents:
+        backup:
+          - veeam
+        monitoring: uim
+      cloudforms:
+        project:
+          id: 1000000000087
+          name: {project_name}
+        provider:
+          id: 1000000000003
+          name: {provider_name}
+        request:
+          id: 1000000001059
+        service:
+          id: 1000000000543
+          name: Access Manager
+        tenant:
+          id: 1000000000012
+          name: Telecom/CIO/Operacion IT y Datacenter/Gestion de Aplicaciones
+        user:
+          email: GFVillalba@teco.com.ar
+          group: EvmTecoPMSGroup
+          id: u200497
+          name: Gabriel Villalba
+      cpus:
+        cores: '4'
+        sockets: '1'
+      disks: {}
+      environment: desa
+      memory_gb: '16'
+      name: TLACTSAPP1
+      networks:
+        access:
+          dvswitch: DSwitch-Pacheco
+          name: dvPG-vlan446
+        backup:
+          dvswitch: DSwitch-Pacheco
+          name: dvPG-vlan481
+      os: linux
+      placement:
+        datacenter: corp
+        region: pac
+      role: appserver
+      vendor:
+        cluster: ClusterPachecoLnx03
+        datacenter: DC-PACHECO-6.7
+        folder: /Desarrollo/Access Manager
+        name: Vmware
+        storage_cluster: DCS_CLPachecoLnx03_G600_01
+        template: GI-RHEL-7.7x64_PAC
+        vcenter: vCenter Corporativo
