@@ -6,7 +6,6 @@ import formEstructure from '../helper/formEstructure';
 import getItem from '../helper/getItem';
 import Appbar from '../components/Appbar';
 import * as Yup from 'yup';
-import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 
 export default () => {
