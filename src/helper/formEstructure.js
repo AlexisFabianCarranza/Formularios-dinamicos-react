@@ -16,10 +16,28 @@ export default [
                 type: 'TextInput',
                 componentType: 'Input',
                 configItem: {
-                    label: 'Number',
+                    label: 'Cantidad de RAM en GB',
                     type: 'number',
                     id: 'numero',
-                    initialState: ''
+                    initialState: '',
+                    validator: {
+                        type: "number",
+                        configs: [
+                            {
+                                type: "min",
+                                props: [
+                                    1,
+                                    "Tiene que ser mayor a 1"
+                                ]
+                            }, {
+                                type: "max",
+                                props: [
+                                    32,
+                                    "No podemos generar una vm con tanta ram"
+                                ]
+                            }
+                        ]
+                    }
 
                 },
             },
@@ -176,6 +194,18 @@ export default [
                     label: 'Esto es un Switch',
                     id: 'testSwitch',
                     initialState: false,
+                },
+            },
+            {
+                type: 'Slider',
+                componentType: 'Slider',
+                configItem: {
+                    label: 'Esto es un Slider cantidad GB de RAM',
+                    id: 'testSliderONE',
+                    initialState: 4,
+                    min: 1,
+                    max: 32,
+                    step: 1
                 },
             },
             {

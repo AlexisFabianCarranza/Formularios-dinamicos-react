@@ -6,6 +6,8 @@ import formEstructure from '../helper/formEstructure';
 import getItem from '../helper/getItem';
 import Appbar from '../components/Appbar';
 import * as Yup from 'yup';
+import Typography from "@material-ui/core/Typography";
+import Slider from "@material-ui/core/Slider";
 
 export default () => {
     const classes = useStyles();
@@ -13,7 +15,8 @@ export default () => {
     const makeInitialState = () => {
         let initalState = {};
         for (let i = 0; i < formEstructure[0].components.length; i++) {
-            if (['Input', 'Checkbox', 'Radio', 'Select', 'Switch'].indexOf(formEstructure[0].components[i].componentType) !== -1) {
+            if (['Input', 'Checkbox', 'Radio', 'Select', 'Switch', 'Slider']
+                .indexOf(formEstructure[0].components[i].componentType) !== -1) {
                 initalState[formEstructure[0].components[i].configItem.id] =
                     formEstructure[0].components[i].configItem.initialState;
             }
@@ -21,7 +24,7 @@ export default () => {
         return initalState;
     };
 
-    const renderComponents = (handleChange, values, handleBlur, isSubmitting, props, errors, touched) => {
+    const renderComponents = (handleChange, values, handleBlur, isSubmitting, props, errors, touched, setFieldValue) => {
         const components = [];
         for (let i = 0; i < formEstructure[0].components.length; i++) {
             components.push(
@@ -33,7 +36,8 @@ export default () => {
                         handleBlur,
                         isSubmitting,
                         errors,
-                        touched
+                        touched,
+                        setFieldValue
                     )}
                     {errors[formEstructure[0].components[i].configItem.id] && touched[formEstructure[0].components[i].configItem.id] ? (
                         <div>{errors[formEstructure[0].components[i].configItem.id]}</div>
@@ -83,6 +87,7 @@ export default () => {
                             handleChange,
                             handleBlur,
                             handleSubmit,
+                            setFieldValue
                         } = props;
                         return (
                             <form onSubmit={handleSubmit} className={classes.form}>
@@ -94,7 +99,8 @@ export default () => {
                                     isSubmitting,
                                     props,
                                     errors,
-                                    touched
+                                    touched,
+                                    setFieldValue
                                 )}
                             </form>
                         );

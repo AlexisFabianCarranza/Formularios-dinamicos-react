@@ -6,73 +6,83 @@ import Radio from '../formComponents/Radio';
 import Select from '../formComponents/Select';
 import SelectDependiente from '../formComponents/SelectDependiente';
 import Switch from "../formComponents/Switch";
+import Slider from "../formComponents/Slider";
 
 export default (
-  componentInfo,
-  handleChange,
-  values,
-  handleBlur,
-  isSubmitting,
-  errors,
-  touched
+    componentInfo,
+    handleChange,
+    values,
+    handleBlur,
+    isSubmitting,
+    errors,
+    touched,
+    setFieldValue
 ) => {
-  switch (componentInfo.type) {
-    case 'Button':
-      return (
-        <Button
-          configItem={componentInfo.configItem}
-          isSubmitting={isSubmitting}
-        />
-      );
-    case 'TextInput':
-      return (
-          <TextInput
-              configItem={componentInfo.configItem}
-              handleChange={handleChange}
-              handleBlur={handleBlur}
-              values={values}
-              error={errors[componentInfo.configItem.id] && touched[componentInfo.configItem.id]}
-          />
-      );
-    case 'Checkbox':
-      return (
-          <Checkbox
-              configItem={componentInfo.configItem}
-              handleChange={handleChange}
-              values={values}
-          />
-      );
-    case 'Radio':
-      return (
-          <Radio
-              configItem={componentInfo.configItem}
-              handleChange={handleChange}
-              values={values}
-          />
-      );
-    case 'Select':
-      return (
-          <Select
-              configItem={componentInfo.configItem}
-              handleChange={handleChange}
-              values={values}
-          />
-      );
-    case 'SelectDependiente':
-      return (
-          <SelectDependiente
-              configItem={componentInfo.configItem}
-              handleChange={handleChange}
-              values={values}
-          />
-      );
-    case 'Switch':
-      return (
-          <Switch
-              configItem={componentInfo.configItem}
-              handleChange={handleChange}
-              values={values}
-          />
-      );
-  }
+    switch (componentInfo.type) {
+        case 'Button':
+            return (
+                <Button
+                    configItem={componentInfo.configItem}
+                    isSubmitting={isSubmitting}
+                />
+            );
+        case 'TextInput':
+            return (
+                <TextInput
+                    configItem={componentInfo.configItem}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    values={values}
+                    error={errors[componentInfo.configItem.id] && touched[componentInfo.configItem.id]}
+                />
+            );
+        case 'Checkbox':
+            return (
+                <Checkbox
+                    configItem={componentInfo.configItem}
+                    handleChange={handleChange}
+                    values={values}
+                />
+            );
+        case 'Radio':
+            return (
+                <Radio
+                    configItem={componentInfo.configItem}
+                    handleChange={handleChange}
+                    values={values}
+                />
+            );
+        case 'Select':
+            return (
+                <Select
+                    configItem={componentInfo.configItem}
+                    handleChange={handleChange}
+                    values={values}
+                />
+            );
+        case 'SelectDependiente':
+            return (
+                <SelectDependiente
+                    configItem={componentInfo.configItem}
+                    handleChange={handleChange}
+                    values={values}
+                />
+            );
+        case 'Switch':
+            return (
+                <Switch
+                    configItem={componentInfo.configItem}
+                    handleChange={handleChange}
+                    values={values}
+                />
+            );
+        case 'Slider':
+            return (
+                <Slider
+                    configItem={componentInfo.configItem}
+                    values={values}
+                    setFieldValue={setFieldValue}
+                />
+            );
+    }
 };
