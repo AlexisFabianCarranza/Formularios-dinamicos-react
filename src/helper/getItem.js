@@ -89,8 +89,8 @@ export default (
             return (
                 <DialogManager
                     configItem={componentInfo.configItem}
-                    handleChange={handleChange}
-                    values={values}
+                    setFieldValue={setFieldValue}
+                    value={values[componentInfo.configItem.id]}
                 />)
     }
 };

@@ -272,8 +272,11 @@ export default [
                 configItem: {
                     label: 'Data',
                     id: 'testDialog',
-                    initialState: '',
-                    values: [],
+                    initialState: [{value: "STG", label:"STAGING"}],
+                    structure: [
+                        {title: "Valorsovich", field: 'value'},
+                        {title: "Nombre", field: 'label'},
+                    ],
 
                 },
             },
