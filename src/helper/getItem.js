@@ -7,6 +7,7 @@ import Select from '../formComponents/Select';
 import SelectDependiente from '../formComponents/SelectDependiente';
 import Switch from "../formComponents/Switch";
 import Slider from "../formComponents/Slider";
+import DialogManager from "../formComponents/DialogManager";
 
 export default (
     componentInfo,
@@ -84,5 +85,12 @@ export default (
                     setFieldValue={setFieldValue}
                 />
             );
+        case 'DialogManager':
+            return (
+                <DialogManager
+                    configItem={componentInfo.configItem}
+                    handleChange={handleChange}
+                    values={values}
+                />)
     }
 };

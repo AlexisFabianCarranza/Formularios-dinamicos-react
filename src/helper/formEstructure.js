@@ -253,6 +253,7 @@ export default [
                     initialState: true,
                 },
             },
+
             {
                 type: 'Slider',
                 componentType: 'Slider',
@@ -263,6 +264,17 @@ export default [
                     min: 1,
                     max: 32,
                     step: 1
+                },
+            },
+            {
+                type: 'DialogManager',
+                componentType: 'DialogManager',
+                configItem: {
+                    label: 'Data',
+                    id: 'testDialog',
+                    initialState: '',
+                    values: [],
+
                 },
             },
             {
